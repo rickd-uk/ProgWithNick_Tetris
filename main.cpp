@@ -14,6 +14,8 @@ int main(void) {
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(darkBlue);
+
+    grid.Draw();
     EndDrawing();
   }
 
