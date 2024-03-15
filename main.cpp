@@ -13,6 +13,7 @@ int main(void) {
   grid.grid[3][5] = 2;
   grid.grid[6][2] = 5;
   grid.grid[19][9] = 7;
+
   grid.Print();
 
   while (!WindowShouldClose()) {
