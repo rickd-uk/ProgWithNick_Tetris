@@ -10,9 +10,8 @@ int main(void) {
   SetTargetFPS(60);
 
   Grid grid = Grid();
-  grid.Print();
 
-  LBlock block = LBlock();
+  TBlock block = TBlock();
 
   while (!WindowShouldClose()) {
     BeginDrawing();
@@ -20,6 +19,7 @@ int main(void) {
 
     grid.Draw();
     block.Draw();
+
     EndDrawing();
   }
 
