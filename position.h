@@ -6,8 +6,8 @@
 class Position {
  public:
   Position(int row, int col);
-  int getRow() const;
-  int getCol() const;
+  int GetRow() const;
+  int GetCol() const;
 
  private:
   int row;

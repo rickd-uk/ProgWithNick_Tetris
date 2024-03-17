@@ -2,6 +2,6 @@
 
 Position::Position(int row, int col) : row(row), col(col) {}
 
-int Position::getRow() const { return row; }
+int Position::GetRow() const { return row; }
 
-int Position::getCol() const { return col; }
+int Position::GetCol() const { return col; }

@@ -99,10 +99,10 @@ Position	position.h	/^class Position {$/;"	c
 Position::Position	position.cpp	/^Position::Position(int row, int col) : row(row), col(col) {}$/;"	f	class:Position	signature:(int row,int col)
 Position::Position	position.h	/^  Position(int row, int col);$/;"	p	class:Position	access:public	signature:(int row,int col)
 Position::col	position.h	/^  int col;$/;"	m	class:Position	typeref:typename:int	access:private
-Position::getCol	position.cpp	/^int Position::getCol() const { return col; }$/;"	f	class:Position	typeref:typename:int	signature:() const
-Position::getCol	position.h	/^  int getCol() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
-Position::getRow	position.cpp	/^int Position::getRow() const { return row; }$/;"	f	class:Position	typeref:typename:int	signature:() const
-Position::getRow	position.h	/^  int getRow() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
+Position::GetCol	position.cpp	/^int Position::GetCol() const { return col; }$/;"	f	class:Position	typeref:typename:int	signature:() const
+Position::GetCol	position.h	/^  int GetCol() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
+Position::GetRow	position.cpp	/^int Position::GetRow() const { return row; }$/;"	f	class:Position	typeref:typename:int	signature:() const
+Position::GetRow	position.h	/^  int GetRow() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
 Position::row	position.h	/^  int row;$/;"	m	class:Position	typeref:typename:int	access:private
 Print	grid.cpp	/^void Grid::Print() {$/;"	f	class:Grid	typeref:typename:void	signature:()
 Print	grid.h	/^  void Print();$/;"	p	class:Grid	typeref:typename:void	access:public	signature:()
@@ -124,10 +124,10 @@ colors	block.h	/^  std::vector<Color> colors;$/;"	m	class:Block	typeref:typename
 colors	grid.h	/^  std::vector<Color> colors;$/;"	m	class:Grid	typeref:typename:std::vector<Color>	access:private
 cyan	colors.cpp	/^const Color cyan = {21, 204, 209, OPAQUE};$/;"	v	typeref:typename:const Color
 darkGray	colors.cpp	/^const Color darkGray = {26, 31, 40, OPAQUE};$/;"	v	typeref:typename:const Color
-getCol	position.cpp	/^int Position::getCol() const { return col; }$/;"	f	class:Position	typeref:typename:int	signature:() const
-getCol	position.h	/^  int getCol() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
-getRow	position.cpp	/^int Position::getRow() const { return row; }$/;"	f	class:Position	typeref:typename:int	signature:() const
-getRow	position.h	/^  int getRow() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
+GetCol	position.cpp	/^int Position::GetCol() const { return col; }$/;"	f	class:Position	typeref:typename:int	signature:() const
+GetCol	position.h	/^  int GetCol() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
+GetRow	position.cpp	/^int Position::GetRow() const { return row; }$/;"	f	class:Position	typeref:typename:int	signature:() const
+GetRow	position.h	/^  int GetRow() const;$/;"	p	class:Position	typeref:typename:int	access:public	signature:() const
 green	colors.cpp	/^const Color green = {47, 230, 23, OPAQUE};$/;"	v	typeref:typename:const Color
 grid	grid.h	/^  int grid[20][10];$/;"	m	class:Grid	typeref:typename:int[20][10]	access:public
 id	block.h	/^  int id;$/;"	m	class:Block	typeref:typename:int	access:public
