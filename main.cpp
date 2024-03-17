@@ -11,8 +11,7 @@ int main(void) {
 
   Grid grid = Grid();
 
-  TBlock block = TBlock();
-  block.Move(4, 3);
+  IBlock block = IBlock();
 
   while (!WindowShouldClose()) {
     BeginDrawing();

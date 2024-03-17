@@ -10,6 +10,7 @@ class Block {
   Block();
   void Draw();
   void Move(int rows, int cols);
+  void Center(int yShift = 0, int xShift = 3) { Move(yShift, xShift); }
   std::vector<Position> GetCellPositions();
   int id;
   std::map<int, std::vector<Position>> cells;
