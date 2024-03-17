@@ -34,7 +34,7 @@ class IBlock : public Block {
   }
 };
 
-// o,s , T, Z
+// Only one set of pos. vectors for 'o' becuase they are identical
 class OBlock : public Block {
  public:
   OBlock() {

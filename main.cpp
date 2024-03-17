@@ -11,7 +11,7 @@ int main(void) {
 
   Grid grid = Grid();
 
-  TBlock block = TBlock();
+  OBlock block = OBlock();
 
   while (!WindowShouldClose()) {
     BeginDrawing();
@@ -25,3 +25,5 @@ int main(void) {
 
   CloseWindow();
 }
+
+// 54:00
