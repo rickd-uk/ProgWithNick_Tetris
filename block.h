@@ -6,16 +6,17 @@
 #include "position.h"
 
 class Block {
- public:
+public:
   Block();
   void Draw();
   void Move(int rows, int cols);
   void Center(int yShift = 0, int xShift = 3) { Move(yShift, xShift); }
   std::vector<Position> GetCellPositions();
+  void Rotate();
   int id;
   std::map<int, std::vector<Position>> cells;
 
- private:
+private:
   int cellSize;
   int rotationState;
   std::vector<Color> colors;
