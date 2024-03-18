@@ -13,6 +13,7 @@ public:
   void Center(int yShift = 0, int xShift = 3) { Move(yShift, xShift); }
   std::vector<Position> GetCellPositions();
   void Rotate();
+  void UndoRotation();
   int id;
   std::map<int, std::vector<Position>> cells;
 

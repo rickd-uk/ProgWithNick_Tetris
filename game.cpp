@@ -75,4 +75,9 @@ bool Game::IsBlockOutside() {
   return false;
 }
 
-void Game::RotateBlock() { curBlock.Rotate(); }
+void Game::RotateBlock() {
+  curBlock.Rotate();
+  if (IsBlockOutside()) {
+    curBlock.UndoRotation();
+  }
+}
