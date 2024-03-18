@@ -4,14 +4,17 @@
 #include <vector>
 
 class Grid {
- public:
+public:
   Grid();
   void Initialize();
   void Print();
   void Draw();
+  bool IsCellOutside(int row, int col);
+  int GetNumCols() { return numCols; }
+  int GetNumRows() { return numRows; }
   int grid[20][10];
 
- private:
+private:
   int numRows;
   int numCols;
   int cellSize;
