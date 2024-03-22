@@ -46,21 +46,21 @@ void Game::HandleInput() {
 
 void Game::MoveBlockLeft() {
   curBlock.Move(0, -1);
-  if (IsBlockOutside()) {
+  if (IsBlockOutside() || !BlockFits()) {
     curBlock.Move(0, 1);
   }
 }
 
 void Game::MoveBlockRight() {
   curBlock.Move(0, 1);
-  if (IsBlockOutside()) {
+  if (IsBlockOutside() || !BlockFits()) {
     curBlock.Move(0, -1);
   }
 }
 
 void Game::MoveBlockDown() {
   curBlock.Move(1, 0);
-  if (IsBlockOutside()) {
+  if (IsBlockOutside() || !BlockFits()) {
     curBlock.Move(-1, 0);
     LockBlock();
   }
@@ -78,7 +78,7 @@ bool Game::IsBlockOutside() {
 
 void Game::RotateBlock() {
   curBlock.Rotate();
-  if (IsBlockOutside()) {
+  if (IsBlockOutside() || !BlockFits()) {
     curBlock.UndoRotation();
   }
 }
@@ -90,4 +90,14 @@ void Game::LockBlock() {
   }
   curBlock = nxtBlock;
   nxtBlock = GetRandomBlock();
+}
+
+bool Game::BlockFits() {
+  std::vector<Position> tiles = curBlock.GetCellPositions();
+  for (Position item : tiles) {
+    if (!grid.IsCellEmpty(item.GetRow(), item.GetCol())) {
+      return false;
+    }
+  }
+  return true;
 }

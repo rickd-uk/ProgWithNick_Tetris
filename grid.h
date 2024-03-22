@@ -12,6 +12,7 @@ public:
   bool IsCellOutside(int row, int col);
   int GetNumCols() { return numCols; }
   int GetNumRows() { return numRows; }
+  bool IsCellEmpty(int row, int col);
   int grid[20][10];
 
 private:
