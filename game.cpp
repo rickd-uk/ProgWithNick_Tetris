@@ -6,6 +6,7 @@ Game::Game() {
   blocks = GetAllBlocks();
   curBlock = GetRandomBlock();
   nxtBlock = GetRandomBlock();
+  gameOver = false;
 }
 
 Block Game::GetRandomBlock() {
@@ -28,6 +29,10 @@ void Game::Draw() {
 }
 void Game::HandleInput() {
   int keyPressed = GetKeyPressed();
+  if (gameOver && keyPressed != 0) {
+    gameOver = false;
+    Reset();
+  }
   switch (keyPressed) {
   case KEY_LEFT:
     MoveBlockLeft();
@@ -45,24 +50,30 @@ void Game::HandleInput() {
 }
 
 void Game::MoveBlockLeft() {
-  curBlock.Move(0, -1);
-  if (IsBlockOutside() || !BlockFits()) {
-    curBlock.Move(0, 1);
+  if (!gameOver) {
+    curBlock.Move(0, -1);
+    if (IsBlockOutside() || !BlockFits()) {
+      curBlock.Move(0, 1);
+    }
   }
 }
 
 void Game::MoveBlockRight() {
-  curBlock.Move(0, 1);
-  if (IsBlockOutside() || !BlockFits()) {
-    curBlock.Move(0, -1);
+  if (!gameOver) {
+    curBlock.Move(0, 1);
+    if (IsBlockOutside() || !BlockFits()) {
+      curBlock.Move(0, -1);
+    }
   }
 }
 
 void Game::MoveBlockDown() {
-  curBlock.Move(1, 0);
-  if (IsBlockOutside() || !BlockFits()) {
-    curBlock.Move(-1, 0);
-    LockBlock();
+  if (!gameOver) {
+    curBlock.Move(1, 0);
+    if (IsBlockOutside() || !BlockFits()) {
+      curBlock.Move(-1, 0);
+      LockBlock();
+    }
   }
 }
 
@@ -77,9 +88,11 @@ bool Game::IsBlockOutside() {
 }
 
 void Game::RotateBlock() {
-  curBlock.Rotate();
-  if (IsBlockOutside() || !BlockFits()) {
-    curBlock.UndoRotation();
+  if (!gameOver) {
+    curBlock.Rotate();
+    if (IsBlockOutside() || !BlockFits()) {
+      curBlock.UndoRotation();
+    }
   }
 }
 
@@ -89,6 +102,9 @@ void Game::LockBlock() {
     grid.grid[item.GetRow()][item.GetCol()] = curBlock.id;
   }
   curBlock = nxtBlock;
+  if (!BlockFits()) {
+    gameOver = true;
+  }
   nxtBlock = GetRandomBlock();
   grid.ClearFullRows();
 }
@@ -101,4 +117,11 @@ bool Game::BlockFits() {
     }
   }
   return true;
+}
+
+void Game::Reset() {
+  grid.Initialize();
+  blocks = GetAllBlocks();
+  curBlock = GetRandomBlock();
+  nxtBlock = GetRandomBlock();
 }
