@@ -90,6 +90,7 @@ void Game::LockBlock() {
   }
   curBlock = nxtBlock;
   nxtBlock = GetRandomBlock();
+  grid.ClearFullRows();
 }
 
 bool Game::BlockFits() {

@@ -13,9 +13,13 @@ public:
   int GetNumCols() { return numCols; }
   int GetNumRows() { return numRows; }
   bool IsCellEmpty(int row, int col);
+  int ClearFullRows();
   int grid[20][10];
 
 private:
+  bool IsRowFull(int row);
+  void ClearRow(int row);
+  void MoveRowDown(int row, int NumRows);
   int numRows;
   int numCols;
   int cellSize;
