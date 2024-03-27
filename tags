@@ -23,11 +23,16 @@
 !_TAG_KIND_DESCRIPTION!C++	t,typedef	/typedefs/
 !_TAG_KIND_DESCRIPTION!C++	u,union	/union names/
 !_TAG_KIND_DESCRIPTION!C++	v,variable	/variable definitions/
+!_TAG_KIND_DESCRIPTION!Sh	a,alias	/aliases/
+!_TAG_KIND_DESCRIPTION!Sh	f,function	/functions/
+!_TAG_KIND_DESCRIPTION!Sh	h,heredoc	/label for here document/
+!_TAG_KIND_DESCRIPTION!Sh	s,script	/script files/
 !_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_OUTPUT_VERSION	0.0	/current.age/
 !_TAG_PARSER_VERSION!C++	1.1	/current.age/
+!_TAG_PARSER_VERSION!Sh	0.0	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
 !_TAG_PROC_CWD	/home/rick/Documents/DEV/CREATE/CR8_DEVS/ProgWithNick/GAMES/Tetris/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
@@ -37,27 +42,48 @@
 !_TAG_ROLE_DESCRIPTION!C++!header	local	/local header/
 !_TAG_ROLE_DESCRIPTION!C++!header	system	/system header/
 !_TAG_ROLE_DESCRIPTION!C++!macro	undef	/undefined/
+!_TAG_ROLE_DESCRIPTION!Sh!heredoc	endmarker	/end marker/
+!_TAG_ROLE_DESCRIPTION!Sh!script	loaded	/loaded/
 Block	block.cpp	/^Block::Block() {$/;"	f	class:Block
 Block	block.h	/^class Block {$/;"	c
+BlockFits	game.cpp	/^bool Game::BlockFits() {$/;"	f	class:Game	typeref:typename:bool
 Center	block.h	/^  void Center(int yShift = 0, int xShift = 3) { Move(yShift, xShift); }$/;"	f	class:Block	typeref:typename:void
+ClearFullRows	grid.cpp	/^int Grid::ClearFullRows() {$/;"	f	class:Grid	typeref:typename:int
+ClearRow	grid.cpp	/^void Grid::ClearRow(int row) {$/;"	f	class:Grid	typeref:typename:void
 Draw	block.cpp	/^void Block::Draw() {$/;"	f	class:Block	typeref:typename:void
+Draw	game.cpp	/^void Game::Draw() {$/;"	f	class:Game	typeref:typename:void
 Draw	grid.cpp	/^void Grid::Draw() {$/;"	f	class:Grid	typeref:typename:void
+EventTriggered	main.cpp	/^bool EventTriggered(double interval) {$/;"	f	typeref:typename:bool
 Game	game.cpp	/^Game::Game() {$/;"	f	class:Game
 Game	game.h	/^class Game {$/;"	c
+GetAllBlocks	game.cpp	/^std::vector<Block> Game::GetAllBlocks() {$/;"	f	class:Game	typeref:typename:std::vector<Block>
 GetCellColors	colors.cpp	/^std::vector<Color> GetCellColors() {$/;"	f	typeref:typename:std::vector<Color>
 GetCellPositions	block.cpp	/^std::vector<Position> Block::GetCellPositions() {$/;"	f	class:Block	typeref:typename:std::vector<Position>
 GetCol	position.cpp	/^int Position::GetCol() const { return col; }$/;"	f	class:Position	typeref:typename:int
+GetNumCols	grid.h	/^  int GetNumCols() { return numCols; }$/;"	f	class:Grid	typeref:typename:int
+GetNumRows	grid.h	/^  int GetNumRows() { return numRows; }$/;"	f	class:Grid	typeref:typename:int
+GetRandomBlock	game.cpp	/^Block Game::GetRandomBlock() {$/;"	f	class:Game	typeref:typename:Block
 GetRow	position.cpp	/^int Position::GetRow() const { return row; }$/;"	f	class:Position	typeref:typename:int
 Grid	grid.cpp	/^Grid::Grid() {$/;"	f	class:Grid
 Grid	grid.h	/^class Grid {$/;"	c
+HandleInput	game.cpp	/^void Game::HandleInput() {$/;"	f	class:Game	typeref:typename:void
 IBlock	blocks.cpp	/^  IBlock() {$/;"	f	class:IBlock	file:
 IBlock	blocks.cpp	/^class IBlock : public Block {$/;"	c	file:
 Initialize	grid.cpp	/^void Grid::Initialize() {$/;"	f	class:Grid	typeref:typename:void
+IsBlockOutside	game.cpp	/^bool Game::IsBlockOutside() {$/;"	f	class:Game	typeref:typename:bool
+IsCellEmpty	grid.cpp	/^bool Grid::IsCellEmpty(int row, int col) {$/;"	f	class:Grid	typeref:typename:bool
+IsCellOutside	grid.cpp	/^bool Grid::IsCellOutside(int row, int col) {$/;"	f	class:Grid	typeref:typename:bool
+IsRowFull	grid.cpp	/^bool Grid::IsRowFull(int row) {$/;"	f	class:Grid	typeref:typename:bool
 JBlock	blocks.cpp	/^  JBlock() {$/;"	f	class:JBlock	file:
 JBlock	blocks.cpp	/^class JBlock : public Block {$/;"	c	file:
 LBlock	blocks.cpp	/^  LBlock() {$/;"	f	class:LBlock	file:
 LBlock	blocks.cpp	/^class LBlock : public Block {$/;"	c	file:
+LockBlock	game.cpp	/^void Game::LockBlock() {$/;"	f	class:Game	typeref:typename:void
 Move	block.cpp	/^void Block::Move(int rows, int cols) {$/;"	f	class:Block	typeref:typename:void
+MoveBlockDown	game.cpp	/^void Game::MoveBlockDown() {$/;"	f	class:Game	typeref:typename:void
+MoveBlockLeft	game.cpp	/^void Game::MoveBlockLeft() {$/;"	f	class:Game	typeref:typename:void
+MoveBlockRight	game.cpp	/^void Game::MoveBlockRight() {$/;"	f	class:Game	typeref:typename:void
+MoveRowDown	grid.cpp	/^void Grid::MoveRowDown(int row, int numRows) {$/;"	f	class:Grid	typeref:typename:void
 OBlock	blocks.cpp	/^  OBlock() {$/;"	f	class:OBlock	file:
 OBlock	blocks.cpp	/^class OBlock : public Block {$/;"	c	file:
 OPAQUE	colors.cpp	/^constexpr int OPAQUE = 255;$/;"	v	typeref:typename:int
@@ -66,10 +92,15 @@ POSITION_H	position.h	/^#define POSITION_H$/;"	d
 Position	position.cpp	/^Position::Position(int row, int col) : row(row), col(col) {}$/;"	f	class:Position
 Position	position.h	/^class Position {$/;"	c
 Print	grid.cpp	/^void Grid::Print() {$/;"	f	class:Grid	typeref:typename:void
+Reset	game.cpp	/^void Game::Reset() {$/;"	f	class:Game	typeref:typename:void
+Rotate	block.cpp	/^void Block::Rotate() {$/;"	f	class:Block	typeref:typename:void
+RotateBlock	game.cpp	/^void Game::RotateBlock() {$/;"	f	class:Game	typeref:typename:void
 SBlock	blocks.cpp	/^  SBlock() {$/;"	f	class:SBlock	file:
 SBlock	blocks.cpp	/^class SBlock : public Block {$/;"	c	file:
 TBlock	blocks.cpp	/^  TBlock() {$/;"	f	class:TBlock	file:
 TBlock	blocks.cpp	/^class TBlock : public Block {$/;"	c	file:
+UndoRotation	block.cpp	/^void Block::UndoRotation() {$/;"	f	class:Block	typeref:typename:void
+UpdateScore	game.cpp	/^void Game::UpdateScore(int linesCleared, int moveDownPoints) {$/;"	f	class:Game	typeref:typename:void
 ZBlock	blocks.cpp	/^  ZBlock() {$/;"	f	class:ZBlock	file:
 ZBlock	blocks.cpp	/^class ZBlock : public Block {$/;"	c	file:
 blocks	game.h	/^  std::vector<Block> blocks;$/;"	m	class:Game	typeref:typename:std::vector<Block>
@@ -81,19 +112,27 @@ col	position.h	/^  int col;$/;"	m	class:Position	typeref:typename:int
 colOffset	block.h	/^  int colOffset;$/;"	m	class:Block	typeref:typename:int
 colors	block.h	/^  std::vector<Color> colors;$/;"	m	class:Block	typeref:typename:std::vector<Color>
 colors	grid.h	/^  std::vector<Color> colors;$/;"	m	class:Grid	typeref:typename:std::vector<Color>
+curBlock	game.h	/^  Block curBlock;$/;"	m	class:Game	typeref:typename:Block
 cyan	colors.cpp	/^const Color cyan = {21, 204, 209, OPAQUE};$/;"	v	typeref:typename:const Color
+darkBlue	colors.cpp	/^const Color darkBlue = {44, 44, 127, OPAQUE};$/;"	v	typeref:typename:const Color
 darkGray	colors.cpp	/^const Color darkGray = {26, 31, 40, OPAQUE};$/;"	v	typeref:typename:const Color
+gameOver	game.h	/^  bool gameOver;$/;"	m	class:Game	typeref:typename:bool
 green	colors.cpp	/^const Color green = {47, 230, 23, OPAQUE};$/;"	v	typeref:typename:const Color
 grid	game.h	/^  Grid grid;$/;"	m	class:Game	typeref:typename:Grid
 grid	grid.h	/^  int grid[20][10];$/;"	m	class:Grid	typeref:typename:int[20][10]
 id	block.h	/^  int id;$/;"	m	class:Block	typeref:typename:int
+lastUpdateTime	main.cpp	/^double lastUpdateTime = 0.0f;$/;"	v	typeref:typename:double
+lightBlue	colors.cpp	/^const Color lightBlue = {59, 85, 162, OPAQUE};$/;"	v	typeref:typename:const Color
 main	main.cpp	/^int main(void) {$/;"	f	typeref:typename:int
 numCols	grid.h	/^  int numCols;$/;"	m	class:Grid	typeref:typename:int
 numRows	grid.h	/^  int numRows;$/;"	m	class:Grid	typeref:typename:int
+nvp	nvp.sh	/^function nvp {$/;"	f
+nxtBlock	game.h	/^  Block nxtBlock;$/;"	m	class:Game	typeref:typename:Block
 orange	colors.cpp	/^const Color orange = {236, 116, 17, OPAQUE};$/;"	v	typeref:typename:const Color
 purple	colors.cpp	/^const Color purple = {166, 0, 247, OPAQUE};$/;"	v	typeref:typename:const Color
 red	colors.cpp	/^const Color red = {232, 18, 18, OPAQUE};$/;"	v	typeref:typename:const Color
 rotationState	block.h	/^  int rotationState;$/;"	m	class:Block	typeref:typename:int
 row	position.h	/^  int row;$/;"	m	class:Position	typeref:typename:int
 rowOffset	block.h	/^  int rowOffset;$/;"	m	class:Block	typeref:typename:int
+score	game.h	/^  int score;$/;"	m	class:Game	typeref:typename:int
 yellow	colors.cpp	/^const Color yellow = {237, 234, 4, OPAQUE};$/;"	v	typeref:typename:const Color
