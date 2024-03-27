@@ -8,7 +8,7 @@
 class Block {
 public:
   Block();
-  void Draw();
+  void Draw(int offsetY, int offsetX);
   void Move(int rows, int cols);
   void Center(int yShift = 0, int xShift = 3) { Move(yShift, xShift); }
   std::vector<Position> GetCellPositions();

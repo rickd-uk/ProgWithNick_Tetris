@@ -26,7 +26,17 @@ std::vector<Block> Game::GetAllBlocks() {
 
 void Game::Draw() {
   grid.Draw();
-  curBlock.Draw();
+  curBlock.Draw(11, 11);
+  switch (nxtBlock.id) {
+  case 3:
+    nxtBlock.Draw(255, 290);
+    break;
+  case 4:
+    nxtBlock.Draw(255, 280);
+    break;
+  default:
+    nxtBlock.Draw(270, 270);
+  }
 }
 void Game::HandleInput() {
   int keyPressed = GetKeyPressed();

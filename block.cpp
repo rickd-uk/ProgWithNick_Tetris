@@ -8,13 +8,13 @@ Block::Block() {
   colOffset = 0;
 }
 
-void Block::Draw() {
+void Block::Draw(int offsetY, int offsetX) {
   std::vector<Position> tiles = GetCellPositions();
   const int cellSizePlus = cellSize + 1;
   const int cellSizeMinus = cellSize - 1;
   for (Position item : tiles) {
-    DrawRectangle(item.GetCol() * cellSize + 11, item.GetRow() * cellSize + 11, cellSizeMinus,
-                  cellSizeMinus, colors[id]);
+    DrawRectangle(item.GetCol() * cellSize + offsetX, item.GetRow() * cellSize + offsetY,
+                  cellSizeMinus, cellSizeMinus, colors[id]);
   }
 }
 
