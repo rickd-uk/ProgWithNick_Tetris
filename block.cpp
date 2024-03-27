@@ -13,8 +13,8 @@ void Block::Draw() {
   const int cellSizePlus = cellSize + 1;
   const int cellSizeMinus = cellSize - 1;
   for (Position item : tiles) {
-    DrawRectangle(item.GetCol() * cellSize, item.GetRow() * cellSize, cellSizeMinus, cellSizeMinus,
-                  colors[id]);
+    DrawRectangle(item.GetCol() * cellSize + 11, item.GetRow() * cellSize + 11, cellSizeMinus,
+                  cellSizeMinus, colors[id]);
   }
 }
 

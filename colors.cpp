@@ -12,6 +12,8 @@ const Color yellow = {237, 234, 4, OPAQUE};
 const Color purple = {166, 0, 247, OPAQUE};
 const Color cyan = {21, 204, 209, OPAQUE};
 const Color blue = {13, 64, 216, OPAQUE};
+const Color lightBlue = {59, 85, 162, OPAQUE};
+const Color darkBlue = {44, 44, 127, OPAQUE};
 
 std::vector<Color> GetCellColors() {
   return {darkGray, green, red, orange, yellow, purple, cyan, blue};
